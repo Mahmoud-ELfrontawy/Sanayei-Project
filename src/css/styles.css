@@ -7,11 +7,19 @@
     --green-color: #2A3517;
     --green-color2: #556B2F;
 }
+.main-background{
+    background: var(--main-color);
+}
+.main-color{
+    color: var(--main-color);
+}
 html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Zain", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #FFFFFF;  
 }
 a{
@@ -29,7 +37,7 @@ ul {
 }
 @media (min-width: 450px){
     .container {
-        width: 500px;
+        width: fit-content;
         }
 }
   /* Small */
@@ -51,21 +59,134 @@ ul {
     }
 }
 /* start header */
+header nav {
+    font-size: 20px;
+}
 header nav ul li:hover{
     cursor: pointer;
     color: var(--main-color);
 }
-header .links button{
+header .links button:nth-child(1){
     padding: 7px 52px 7px 52px;
     border-radius: 4px;
     border: 1px solid var(--main-color);
     background: var(--main-color);
 }
+#menu-toggle{
+    background: var(--green-color2);
+    color: white;
+    padding: 2px 10px 0 10px;
+}
+#mobile-menu{
+    transition: 0.5s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
 header .links .sign-now{
     background: white;
     color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    padding: 7px 52px 7px 52px;
 }
 header .links .sign-now:hover{
     background: var(--main-color);
     color: white;
+}
+/*  */
+/* start section صنايعيّتنا  */
+.sanayei .container .workers-section .title .border-div{
+    margin-top: 3px;
+    background-color: var(--main-color);
+    width: 180px;
+    height: 2px;
+}
+.sanayei .container .workers-section .title2 .border-div{
+    margin-top: 3px;
+    background-color: var(--main-color);
+    width: 100px;
+    height: 2px;
+}
+.sanayei .container .filters-section .search{
+    Width : 130px;
+    border-radius: 16px;
+}
+.sanayei .container .workers-section .cart{
+    width: 300px;
+    height: 480px;
+    border-bottom: 1.5px solid var(--main-color);
+}
+.sanayei .container .workers-section .cart .star .stars i{
+    cursor: pointer;
+}
+
+.workers-section .container .cart .description{
+    font-size: 18px;
+}
+/* responsive */
+@media (max-width: 1200px) {
+        header nav {
+    font-size: 15px;
+    }
+    .sanayei .container .workers-section .title{
+        padding: 20px 10px 20px 0;
+    }
+}
+@media (max-width: 992px) {
+    header{
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+        gap: 5px;
+    }
+    
+    header nav ul{
+        display: none;
+    }
+    
+    .sanayei .container .filters-section{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .sanayei .container .workers-section .title{
+        padding: 20px 10px 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    header nav ul{
+        display: none;
+    }
+    header .links button{
+        padding: 5px 30px 5px 30px;
+    }
+    .sanayei .container .filters-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 530px) {
+    .sanayei .container .filters-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .links{
+        display: flex;
+        flex-direction: column;
+    }
+    .sanayei .container .workers-section .title{
+        padding: 0;
+        width: fit-content;
+    }
+}
+@media (max-width: 650px){
+    header .links{
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,40 +1,551 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanayei Project</title>
-    <link rel="stylesheet" href="../src/css/tailwind.css">
-    <link rel="stylesheet" href="../src/css/styles.css">
-    <link rel="stylesheet" href="../src/css/all.min.css">
-    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/tailwind.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/all.min.css" />
+    <link rel="stylesheet" href="../src/css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Zain&display=swap" rel="stylesheet" />
     <!-- Animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
     <!-- start header -->
     <header class="p-8 flex justify-between items-center shadow-[0_4px_35px_1px_rgba(0,0,0,0.1)]">
-            <div class="logo"><p class="text-2xl">صنايعي دوت كوم </p></div>
-            <nav class="flex">
-                <ul class="flex gap-5 font-bold">
-                    <li>الرئيسيه</li>
-                    <li>طلب خدمة</li>
-                    <li>اختر صنايعي</li>
-                    <li>متابعة الطلبات</li>
-                </ul>
-            </nav>
-            <div class="links flex gap-2 transition-all">
-                <button class="order-now text-white">اطلب الان</button>
-                <button class="sign-now duration-75 ease-in-out delay-75">سجل الان</button>
-            </div>
+        <div class="logo">
+            <p class="text-2xl">صنايعي دوت كوم</p>
+        </div>
+        <nav class="flex">
+            <ul class="flex items-center gap-5">
+                <li>الرئيسيه</li>
+                <li class="flex items-center">
+                    <select name="" id="" class="cursor-pointer">
+                        <option value="">طلب خدمه</option>
+                        <option value="">دهان</option>
+                        <option value="">ديكور</option>
+                        <option value="">كهرباء</option>
+                    </select>
+            </li>
+                <li>اختر صنايعي</li>
+                <li>متابعة الطلبات</li>
+            </ul>
+        </nav>
+        <div class="links flex gap-2 transition-all">
+            <button class="order-now text-white hover:cursor-pointer">
+                اطلب الان
+            </button>
+            <button class="sign-now duration-75 ease-in-out delay-75 hover:cursor-pointer">
+                سجل الان
+            </button>
+            <!-- menu-toggle -->
+            <button class="md:hidden items-center block" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- menu-toggle -->
+        </div>
     </header>
-    <!-- start header -->
+    <!-- end header -->
+    <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden justify-evenly items-center p-5 bg-white shadow md:hidden ">
+            <a href="#">الرئيسية</a>
+            <a class="flex items-center">
+                    <select name="" id="" class="cursor-pointer">
+                        <option value="">طلب خدمه</option>
+                        <option value="">دهان</option>
+                        <option value="">ديكور</option>
+                        <option value="">كهرباء</option>
+                    </select>
+            </a>
+            <a href="#">اختر صنايعي</a>
+            <a href="#">متابعة الطلبات</a>
+        </div>
+        <!-- Mobile Menu -->
+    <!-- start section صنايعيّتنا -->
+    <section class="sanayei">
+        <div class="container">
+            <div class="title text-center pt-8">
+                <p class="text-2xl main-color">صنايعيّتنا</p>
+                <h1 class="text-6xl m-0 p-0">اختر صنايعيتك وابدأ شغلك</h1>
+            </div>
+            <section class="filters-section flex flex-wrap gap-4 md:gap-8 items-center justify-center py-8">
+                <!-- زر البحث -->
+                <button
+                    class="search bg-orange-500 hover:bg-orange-600 cursor-pointer
+                    text-white px-10 py-3 flex items-center justify-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <!-- فلتر الحرفة -->
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-green-700">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <select
+                        class="rounded w-60 appearance-none border border-green-700
+                        text-green-800 px-4 py-3 pr-10 focus:outline-none cursor-pointer">
+                        <option>اختر الحرفة</option>
+                        <option>نجار</option>
+                        <option>كهربائي</option>
+                        <option>دهّان</option>
+                    </select>
+                </div>
+
+                <!-- فلتر العنوان -->
+                <div class="relative">
+                    <select
+                        class="rounded w-60 appearance-none border border-green-700
+                        text-green-800 px-4 py-3 pr-10 focus:outline-none cursor-pointer">
+                        <option>اختر العنوان</option>
+                        <option>مدينة نصر</option>
+                        <option>المهندسين</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-green-700">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- فلتر المحافظة -->
+                <div class="relative">
+                    <select
+                        class="rounded w-60 appearance-none border border-green-700
+                        text-green-800 px-4 py-3 pr-10 focus:outline-none cursor-pointer">
+                        <option>اختر المحافظة</option>
+                        <option>القاهرة</option>
+                        <option>الجيزة</option>
+                        <option>الإسكندرية</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-green-700">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </section>
+            <!--  -->
+            <section class="workers-section bg-white flex flex-col items-center">
+                <div
+                    class="title flex justify-start md:content-center pt-5 pb-5 flex-col sm:content-center w-full ps-30">
+                    <h1>الصنايعية المفضلين</h1>
+                    <div class="border-div"></div>
+                </div>
+                <div class="container mx-auto px-4 flex flex-wrap gap-3 items-center justify-center py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- كارت صنايعي -->
+                        <div
+                            class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 5.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-22 bg-orange-500 text-white px-12 text-xl">نجار</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-18">
+                                محمد أحمد الصاوي
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                خبير في حلول السباكة والتركيبات السريعة ، بخبرة أكثر من 8
+                                سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- كارت صنايعي ثاني -->
+                        <div
+                            class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 4.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span
+                                class="relative bottom-7 left-18 bg-orange-500 text-white px-12 text-xl">كهربائي</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-23">
+                                سامي حسين
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                كهربائي معتمد لحلول الإنارة والتمديدات الكهربائية بأمان
+                                واحتراف، بخبرة 7 سنوات
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- كارت صنايعي ثالث -->
+                        <div
+                            class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 3.png" alt="دهّان" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-20 bg-orange-500 text-white px-12 text-xl">دهّان</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-21">
+                                كريم مصطفى
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                تشطيبات الدهانات الداخلية والخارجية، خبرة أكتر من 9 سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- end like workers-section -->
+            <!-- start All workers-section -->
+            <section class="workers-section bg-white flex flex-col items-center">
+                <div
+                    class="title title2 flex justify-start md:content-center pt-5 pb-5 flex-col sm:content-center w-full ps-30">
+                    <h1>كل الصنايعية</h1>
+                    <div class="border-div"></div>
+                </div>
+                <div class="container mx-auto px-4 flex flex-wrap gap-3 items-center justify-center py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- كارت صنايعي -->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-gray-600 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 5.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-22 bg-orange-500 text-white px-12 text-xl">نجار</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-18">
+                                محمد أحمد الصاوي
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                خبير في حلول السباكة والتركيبات السريعة ، بخبرة أكثر من 8
+                                سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- كارت صنايعي ثاني -->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 4.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span
+                                class="relative bottom-7 left-18 bg-orange-500 text-white px-12 text-xl">كهربائي</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-23">
+                                سامي حسين
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                كهربائي معتمد لحلول الإنارة والتمديدات الكهربائية بأمان
+                                واحتراف، بخبرة 7 سنوات
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- كارت صنايعي ثالث -->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 3.png" alt="دهّان" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-20 bg-orange-500 text-white px-12 text-xl">دهّان</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-21">
+                                كريم مصطفى
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                تشطيبات الدهانات الداخلية والخارجية، خبرة أكتر من 9 سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- كارت صنايعي رابع-->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-gray-600 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 5.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-22 bg-orange-500 text-white px-12 text-xl">نجار</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-18">
+                                محمد أحمد الصاوي
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                خبير في حلول السباكة والتركيبات السريعة ، بخبرة أكثر من 8
+                                سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fa-star far"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- كارت صنايعي خامس -->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-gray-600 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 4.png" alt="نجار" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span
+                                class="relative bottom-7 left-18 bg-orange-500 text-white px-12 text-xl">كهربائي</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-23">
+                                سامي حسين
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                كهربائي معتمد لحلول الإنارة والتمديدات الكهربائية بأمان
+                                واحتراف، بخبرة 7 سنوات
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- كارت صنايعي سادس -->
+                        <div class="cart relative border border-gray-200 rounded-lg
+                            shadow pb-1 flex flex-col items-center justify-between">
+                            <!-- الأيقونة -->
+                            <div class="hearticon absolute top-4 right-6 text-red-500 text-3xl">
+                                <i id="heartIcon" class="heartIcon fa-solid fa-heart hover:cursor-pointer"></i>
+                            </div>
+                            <!-- الصورة -->
+                            <img src="../assets/images/image 3.png" alt="دهّان" class="w-full rounded-t-lg mb-4" />
+                            <!-- شارة الحرفة -->
+                            <span class="relative bottom-7 left-20 bg-orange-500 text-white px-12 text-xl">دهّان</span>
+                            <!-- الاسم -->
+                            <h3 class="text-lg font-bold relative bottom-7 left-21">
+                                كريم مصطفى
+                            </h3>
+                            <!-- الوصف -->
+                            <p class="description text-start ps-3 text-gray-400 relative bottom-7 left-0">
+                                تشطيبات الدهانات الداخلية والخارجية، خبرة أكتر من 9 سنوات.
+                            </p>
+                            <!-- التقييم -->
+                            <div class="star flex text-orange-500 px-3 justify-end w-full relative bottom-5 left-0">
+                                <div id="stars" class="stars flex gap-2">
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                    <i class="filled fas fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- الأزرار -->
+                            <div class="flex justify-between w-full text-green-800 font-bold px-4 mb-2">
+                                <a href="#" class="hover:underline flex items-center gap-1">
+                                    طلب خدمة
+                                </a>
+                                <a href="#" class="hover:underline flex items-center gap-2">
+                                    المزيد
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- All  -->
+        </div>
+    </section>
+    <!-- end section صنايعيّتنا -->
     <script src="../src/js/main.js"></script>
     <!-- Start Links For WoW.JS -->
     <script src="../src/js/wow.min.js"></script>
-    <script>new WOW().init();</script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
+
 </html>
