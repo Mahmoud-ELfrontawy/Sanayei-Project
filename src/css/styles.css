@@ -123,6 +123,21 @@ header .links .sign-now:hover{
 .workers-section .container .cart .description{
     font-size: 18px;
 }
+/* footer */
+    footer .container{
+        width: fit-content;
+    }
+#scrollBtn {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+#scrollBtn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* footer */
 /* responsive */
 @media (max-width: 1200px) {
         header nav {
@@ -130,6 +145,9 @@ header .links .sign-now:hover{
     }
     .sanayei .container .workers-section .title{
         padding: 20px 10px 20px 0;
+    }
+    footer .container .social{
+        justify-content: start;
     }
 }
 @media (max-width: 992px) {
@@ -168,6 +186,9 @@ header .links .sign-now:hover{
         flex-direction: column;
         align-items: center;
     }
+    footer .container .social{
+        justify-content: center;
+    }
 }
 @media (max-width: 530px) {
     .sanayei .container .filters-section{
@@ -183,10 +204,32 @@ header .links .sign-now:hover{
         padding: 0;
         width: fit-content;
     }
+    footer .container .social{
+        width: 0;
+        justify-content: center;
+        border-bottom: 1px solid #ccc;
+    }
+    footer .container .about-us{
+        margin: 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    footer .container .learn{
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 15px;
+    }
 }
 @media (max-width: 650px){
     header .links{
         display: flex;
         flex-direction: column;
     }
+    footer .container .social{
+        width: 0;
+        justify-content: center;
+    }
+    footer .container .about-us{
+        margin: 0;
+    }
+
 }

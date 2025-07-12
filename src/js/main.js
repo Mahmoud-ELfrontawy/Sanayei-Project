@@ -54,3 +54,15 @@ cards.forEach(card => {
     });
 });
 
+
+// scrollBtn
+
+const scrollBtn = document.getElementById('scrollBtn');
+
+    window.addEventListener('scroll', () => {
+    if (window.scrollY < 1400) {
+        scrollBtn.classList.add('hidden');
+    } else {
+        scrollBtn.classList.remove('hidden');
+    }
+});
