@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #FF8031;
+    --dark-color: #000000;
+    --grey-color: #F9FAFB;
+    --green-color: #2A3517;
+    --green-color2: #556B2F;
+    --par-color: #777777;
+}
+body{
+    background: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Zain" , sans-serif;
+}
+input,button,select,textarea{
+    outline: none;
+    border: none;
+}
+span{
+    color: var(--main-color);
+}
+p{
+    color: var(--par-color);
+}
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+ul {
+    list-style: none;
+}
+.container {
+    max-width: 1200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 450px){
+    .container {
+        width: fit-content;
+        }
+}
+  /* Small */
+@media (min-width: 768px) {
+    .container {
+    width: 700px;
+    }
+}
+  /* Medium */
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+}
+  /* Large */
+@media (min-width: 1200px) {
+    .container {
+    width: 1200px;
+    }
+}
