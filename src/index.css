@@ -17,6 +17,7 @@
 body{
     background: #ffffff;
     font-family: "Inter", sans-serif;
+    direction: rtl;
 }
 html{
     scroll-behavior: smooth;
@@ -27,7 +28,7 @@ img{
 h1,h2,h3,h4,h5,h6{
     font-family: "Zain" , sans-serif;
 }
-input,button,select,textarea{
+input,select,textarea{
     outline: none;
     border: none;
 }
@@ -39,7 +40,6 @@ p{
 }
 a{
     text-decoration: none;
-    color: var(--dark-color);
 }
 ul {
     list-style: none;

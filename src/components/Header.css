@@ -1,0 +1,78 @@
+:root {
+    --main-color: #ff8031;
+    --dark-color: #000000;
+    --grey-color: #f9fafb;
+    --green-color: #2a3517;
+    --green-color2: #556b2f;
+    --par-color: #777777;
+    --transition: all 0.2s ease-in-out;
+}
+
+
+header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0px 4px 19px 3px rgba(0, 0, 0, 0.25);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav .logo img {
+    width: 55px;
+    height: 55px;
+}
+
+header ul li a {
+    font-size: 20px;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+header ul li a:hover,
+header ul li a:hover li svg {
+    color: var(--main-color);
+}
+
+header nav .logo .logo-text .sanay-text {
+    font-size: 12px;
+}
+
+header nav .buttons-header a,
+header nav .buttons-header .btn-primary,
+header nav .buttons-header .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+header nav .buttons-header .btn-primary {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+
+header nav .buttons-header .btn-outline {
+    background-color: white;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+header nav .buttons-header .btn-outline:hover {
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+}
+
+header nav .buttons-header .btn-primary:hover {
+    opacity: 0.95;
+    cursor: pointer;
+}

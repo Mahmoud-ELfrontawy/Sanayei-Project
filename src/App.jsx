@@ -1,12 +1,22 @@
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import RequestService from "./pages/RequestService";
+import ChooseSanay from "./pages/ChooseSanay";
+import Orders from "./pages/Orders";
 
 function App() {
-
   return (
     <>
-      <h1 className="h-lvh flex justify-center
-      items-center text-6xl text-orange-500">صنايعي دوت كوم</h1>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/request-service" element={<RequestService />} />
+        <Route path="/choose" element={<ChooseSanay />} />
+        <Route path="/orders" element={<Orders />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
