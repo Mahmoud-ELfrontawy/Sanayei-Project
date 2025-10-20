@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import img from "../sanayei-img/logo project.png";
 import { IoIosArrowDown } from "react-icons/io";
 import "./Header.css";
+import Button from "./Button";
 
 function Header() {
         const activeClass = ({ isActive }) =>
@@ -54,24 +55,11 @@ function Header() {
                 </ul>
 
                 {/* Buttons */}
-                <div className="buttons-header hidden md:flex items-center gap-3">
-                    <Link to="/request-service" className="btn-primary bg-[#FF8031] text-white">
-                        اطلب الان
-                    </Link>
-
-                    <NavLink
-                        to="/signup"
-                        className={({ isActive }) =>
-                            `btn-outline flex items-center gap-1 ${isActive ? "text-white bg-[#FF8031]" : "text-black"}`
-                        }
-                    >
-                        سجل الان <IoIosArrowDown />
-                    </NavLink>
-                </div>
+                <Button showIcon/>
 
                 {/* Mobile menu placeholder */}
                 <div className="md:hidden">
-                    <button aria-label="menu" className="p-2">
+                    <button aria-label="menu" className="p-2 text-2xl">
                         ☰
                     </button>
                 </div>
