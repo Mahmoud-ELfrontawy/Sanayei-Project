@@ -58,7 +58,7 @@ export default function AboutSection() {
                     </ul>
 
                     <div className="about-cta">
-                        <Link to="/request-service" className="btn btn-primary2 gap-5"><FaArrowLeft/>اطلب الآن</Link>
+                        <Link to="/request-service" className="btn-about btn-primary-about gap-5"><FaArrowLeft/>اطلب الآن</Link>
                     </div>
                 </div>
             </div>

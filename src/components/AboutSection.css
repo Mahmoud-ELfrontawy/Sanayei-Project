@@ -1,6 +1,7 @@
 /* AboutSection.css */
 :root {
     --main-color: #ff8031;
+    --main-color2: #f36914;
     --text: #0f172a;
     --muted: #6b7280;
     --bg: #ffffff;
@@ -16,6 +17,8 @@
 
 /* مركز الحاوية */
 .about-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: min(1200px, 96%);
     margin: 0 auto;
     display: grid;
@@ -182,7 +185,8 @@
     margin-top: 10px;
 }
 
-.btn {
+.btn-about {
+    width: 200px;
     padding: 10px 30px;
     border-radius: 8px;
     text-decoration: none;
@@ -191,13 +195,17 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    font-size: 20px;
 }
 
-.btn-primary2 {
+.btn-primary-about {
     background: var(--main-color);
     color: #fff;
     border: none;
 }
+.btn-primary-about:hover{
+    background: var(--main-color2)
+};
 
 /* responsive */
 @media (max-width: 900px) {
@@ -205,6 +213,7 @@
         grid-template-columns: 1fr;
         gap: 24px;
     }
+    
 
     .media-frame {
         height: 320px;
