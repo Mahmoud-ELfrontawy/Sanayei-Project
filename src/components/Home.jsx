@@ -5,6 +5,7 @@ import imageHome from "../sanayei-img/home.jpg";
 import "./Home.css";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
+import Footer from "./Footer";
 
 function Home() {
     return (
@@ -22,6 +23,7 @@ function Home() {
             <CardsRow/>
             <AboutSection/>
             <ServicesSection/>
+            <Footer/>
         </section>
     );
 }
