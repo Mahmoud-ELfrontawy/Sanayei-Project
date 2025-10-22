@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import RequestService from "./pages/RequestService";
 import ChooseSanay from "./pages/ChooseSanay";
 import Orders from "./pages/Orders";
+import Register from "./components/Register"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/request-service" element={<RequestService />} />
         <Route path="/choose" element={<ChooseSanay />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       
     </>

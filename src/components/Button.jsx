@@ -11,7 +11,7 @@ function Button({ showIcon = false }) {
             </Link>
 
             <NavLink
-                to="/signup"
+                to="/register"
                 className={({ isActive }) =>
                     isActive ?
                 "btn-outline btn-outline--active flex items-center gap-1" :

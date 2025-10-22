@@ -24,6 +24,7 @@ function Home() {
             <AboutSection/>
             <ServicesSection/>
             <Footer/>
+            
         </section>
     );
 }

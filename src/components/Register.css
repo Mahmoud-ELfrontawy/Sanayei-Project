@@ -1,0 +1,249 @@
+:root {
+    --main-color: #FF8031;
+    --dark-color: #0f172a;
+    --muted-color: #6b7280;
+    --green-color: #2A3517;
+    --green-color2: #556B2F;
+    --par-color: #777777;
+    --bg: #ffffff;
+    --input-border: rgba(42, 53, 23, 0.08);
+    --radius: 14px;
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.register{
+    padding-top: 20px;
+}
+/* card container */
+.register-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    direction :ltr;
+}
+
+/* تحسين الشكل على الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .register-card {
+        height: 630px;
+        /* أكبر شوية */
+        flex-direction: row;
+    }
+}
+
+/* form side */
+.form-side {
+    padding: 28px;
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* العناوين */
+.form-side h2 {
+    margin: 0;
+    font-size: 34px;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.form-side p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    color: var(--muted-color);
+    font-size: 20px;
+}
+
+/* form layout */
+form {
+    margin-top: 18px;
+    width: 100%;
+}
+
+/* basic inputs (larger, cleaner) */
+.input {
+    width: 100%;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(85, 107, 47, 1);
+    background: #fff;
+    font-size: 16px;
+    color: var(--dark-color);
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow .16s ease, border-color .16s ease, transform .08s ease;
+}
+
+/* placeholder */
+.input::placeholder {
+    color: var(--green-color2);
+    font-size: 20px;
+}
+
+/* focus */
+.input:focus {
+    box-shadow: 0 8px 30px rgba(255, 128, 49, 0.08);
+    transform: translateY(-1px);
+}
+
+/* مجموعة الحقول */
+.input-group {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+/* password toggle */
+.pass-toggle {
+    position: absolute;
+    left: 12px;
+    /* dir=rtl */
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--muted-color);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+/* primary button (أكبر وأوضح) */
+.btn-primary-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: var(--main-color);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+    width: 100%;
+}
+
+.btn-primary-register:hover {
+    box-shadow: 0 10px 30px rgba(255, 128, 49, 0.12);
+}
+
+/* divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 14px 0;
+    justify-content: center;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    background: #e6e6e6;
+    flex: 1 1 0;
+}
+
+.divider span{
+    font-size: 20px;
+}
+
+/* socials */
+.socials-register {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.socials-register button {
+    flex: 1 1 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 12px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(85, 107, 47, 0.25);
+    color: #111827;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease;
+}
+
+.socials-register button:hover {
+    background: rgba(85, 107, 47, 0.555);
+    color: white;
+}
+
+/* small text and link */
+.text-muted-register {
+    color: var(--muted-color);
+    font-size: 20px;
+    margin-top: 6px;
+}
+
+.link {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* right image side */
+.image-side {
+    flex: 1 1 45%;
+    min-height: 260px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-side img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.03);
+    transition: transform 8s linear;
+}
+
+.image-side img:hover {
+    transform: scale(1.06);
+}
+
+/* responsiveness: stack on small screens */
+@media (max-width: 767px) {
+    .register-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-side {
+        padding: 20px;
+    }
+
+    .image-side {
+        display: none;
+    }
+
+    /* hide image on small */
+}
+
+/* small accessibility */
+.sr-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
