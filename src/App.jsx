@@ -6,6 +6,8 @@ import ChooseSanay from "./components/Home/ChooseSanay";
 import Orders from "./pages/Orders";
 import Register from "./components/LoginAndRegister/Register"
 import Login from "./components/LoginAndRegister/Login";
+import ForgotPassword from "./components/LoginAndRegister/ForgotPassword";
+import ChangePassword from "./components/LoginAndRegister/ChangePassword";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
       
     </>

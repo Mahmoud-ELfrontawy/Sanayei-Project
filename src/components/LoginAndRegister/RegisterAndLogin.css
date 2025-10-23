@@ -72,6 +72,9 @@ form {
     margin-top: 18px;
     width: 100%;
 }
+.form-forgot{
+    margin-top: 50px;
+}
 
 /* basic inputs (larger, cleaner) */
 .input {
@@ -218,6 +221,9 @@ form {
     color: var(--main-color);
     text-decoration: none;
     font-weight: 700;
+}
+.link-forgot-password{
+    margin-top: 20px;
 }
 
 /* right image side */

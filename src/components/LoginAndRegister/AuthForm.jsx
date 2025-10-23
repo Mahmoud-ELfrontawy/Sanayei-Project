@@ -1,11 +1,9 @@
-// AuthForm.jsx
-import  { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; 
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { FaFacebook } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-import "./RegisterAndLogin.css"; 
-import image from "../../sanayei-img/image-register.png"; 
+import { FaFacebook, FaGoogle } from "react-icons/fa";
+import "./RegisterAndLogin.css";
+import image from "../../sanayei-img/image-register.png";
 
 export default function AuthForm({
     mode = "login",
@@ -13,7 +11,7 @@ export default function AuthForm({
     extraLinks = null,
 }) {
     const isRegister = mode === "register";
-
+    const navigate = useNavigate(); 
     const [values, setValues] = useState({
         name: "",
         email: "",
@@ -32,18 +30,25 @@ export default function AuthForm({
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (isRegister && values.password !== values.confirm) {
             alert("كلمة المرور والتأكيد لا يتطابقان");
             return;
         }
+
+        // لو عندك دالة onSubmit خاصة، استخدمها
         if (onSubmit) onSubmit(values);
         else console.log(mode, values);
+
+        // ✅ بعد النجاح، نوجه المستخدم إلى الصفحة الرئيسية
+        navigate("/"); 
     };
 
     return (
         <main className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
             <div className="register-card max-w-5xl w-full bg-white rounded-lg shadow-lg
             overflow-hidden flex flex-col md:flex-row">
+                
                 {/* form side */}
                 <section className="form-side w-full md:w-1/2 p-8 md:p-12" dir="rtl">
                     <h2 className="text-main text-2xl font-bold">
@@ -56,10 +61,8 @@ export default function AuthForm({
                     </p>
 
                     <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                        {/* name only for register */}
                         {isRegister && (
                             <div className="input-group">
-                                <label className="sr-only">الاسم</label>
                                 <input
                                     name="name"
                                     value={values.name}
@@ -72,7 +75,6 @@ export default function AuthForm({
                         )}
 
                         <div className="input-group">
-                            <label className="sr-only">البريد الإلكتروني</label>
                             <input
                                 name="email"
                                 type="email"
@@ -85,7 +87,6 @@ export default function AuthForm({
                         </div>
 
                         <div className="input-group relative">
-                            <label className="sr-only">كلمة المرور</label>
                             <input
                                 name="password"
                                 type={showPass ? "text" : "password"}
@@ -99,16 +100,13 @@ export default function AuthForm({
                                 type="button"
                                 onClick={() => setShowPass((s) => !s)}
                                 className="pass-toggle"
-                                aria-label="Toggle password visibility"
                             >
                                 {showPass ? <FiEyeOff /> : <FiEye />}
                             </button>
                         </div>
 
-                        {/* confirm only for register */}
                         {isRegister && (
                             <div className="input-group relative">
-                                <label className="sr-only">تأكيد كلمة المرور</label>
                                 <input
                                     name="confirm"
                                     type={showPassConfirm ? "text" : "password"}
@@ -122,14 +120,12 @@ export default function AuthForm({
                                     type="button"
                                     onClick={() => setShowPassConfirm((s) => !s)}
                                     className="pass-toggle"
-                                    aria-label="Toggle confirm visibility"
                                 >
                                     {showPassConfirm ? <FiEyeOff /> : <FiEye />}
                                 </button>
                             </div>
                         )}
 
-                        {/* remember checkbox only for login */}
                         {!isRegister && (
                             <div className="remeber-me flex items-center justify-between">
                                 <label className="flex items-center gap-2 text-sm">
@@ -155,22 +151,20 @@ export default function AuthForm({
                             <span>أو</span>
                         </div>
 
-                        {isRegister ? (
+                        {isRegister && (
                             <div className="socials-register-and-login flex gap-3">
                                 <button type="button" className="social-btn w-1/2">
                                     سجل عبر جوجل
-                                    <FaGoogle/>
+                                    <FaGoogle />
                                 </button>
                                 <button type="button" className="social-btn w-1/2">
                                     سجل عبر فيسبوك
-                                    <FaFacebook/>
+                                    <FaFacebook />
                                 </button>
                             </div>
-                        ): ""
-                        }
+                        )}
 
-                        <p className="text-muted-register-and-login 
-                        text-xs text-center text-muted mt-3">
+                        <p className="text-xs text-center text-muted mt-3">
                             {isRegister ? (
                                 <>
                                     لديك حساب بالفعل؟{" "}
@@ -192,7 +186,6 @@ export default function AuthForm({
                     </form>
                 </section>
 
-                {/* image side */}
                 <aside className="image-side w-full md:w-1/2 relative hidden md:block">
                     <img
                         src={image}
