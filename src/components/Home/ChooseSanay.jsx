@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaArrowRight, FaStar } from "react-icons/fa";
-import Image1 from "../sanayei-img/image3.png";
-import Image2 from "../sanayei-img/image4.png";
-import Image3 from "../sanayei-img/image5.png";
+import { FaArrowLeft, FaStar } from "react-icons/fa";
+import Image1 from "../../sanayei-img/image3.png";
+import Image2 from "../../sanayei-img/image4.png";
+import Image3 from "../../sanayei-img/image5.png";
 
 import "./ChooseSanay.css";
 

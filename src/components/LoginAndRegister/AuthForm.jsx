@@ -5,7 +5,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import "./RegisterAndLogin.css"; 
-import image from "../sanayei-img/image register.png"; 
+import image from "../../sanayei-img/image-register.png"; 
 
 export default function AuthForm({
     mode = "login",

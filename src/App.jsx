@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import RequestServiceSection from "./components/RequestServiceSection";
-import ChooseSanay from "./components/ChooseSanay";
+import Header from "./components/Home/Header";
+import Home from "./components/Home/Home";
+import RequestServiceSection from "./components/Home/RequestServiceSection";
+import ChooseSanay from "./components/Home/ChooseSanay";
 import Orders from "./pages/Orders";
-import Register from "./components/Register"
-import Login from "./components/Login";
+import Register from "./components/LoginAndRegister/Register"
+import Login from "./components/LoginAndRegister/Login";
 
 function App() {
   return (

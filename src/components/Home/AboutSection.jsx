@@ -2,9 +2,9 @@
 import { Link } from "react-router-dom";
 import { FiCheckCircle, FiClock } from "react-icons/fi"; 
 import { FaArrowLeft } from "react-icons/fa6";
-import bigImg from "../sanayei-img/portfolio image 1.png";    
-import smallImg from "../sanayei-img/portfolio image 2.png";   
-import mediaDot from "../sanayei-img/dots.png"
+import bigImg from "../../sanayei-img/portfolio image 1.png";    
+import smallImg from "../../sanayei-img/portfolio image 2.png";   
+import mediaDot from "../../sanayei-img/dots.png"
 import "./AboutSection.css";
 
 export default function AboutSection() {

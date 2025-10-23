@@ -1,6 +1,6 @@
 // CardsRow.jsx
 import { FaShieldAlt, FaStopwatch, FaMoneyBillWave } from "react-icons/fa";
-import "../components/Home";
+import "../components/Home/Home";
 
 const cards = [
     {

@@ -129,7 +129,7 @@
 // }
 
 // Register.jsx
-import AuthForm from "../components/AuthForm";
+import AuthForm from "./AuthForm";
 
 export default function Register() {
     const submitRegister = (values) => {

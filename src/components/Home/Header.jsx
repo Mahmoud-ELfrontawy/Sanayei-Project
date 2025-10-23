@@ -1,9 +1,9 @@
 // Header.jsx
 import { NavLink, Link } from "react-router-dom";
-import img from "../sanayei-img/logo project.png";
+import img from "../../sanayei-img/logo project.png";
 import { IoIosArrowDown } from "react-icons/io";
 import "./Header.css";
-import Button from "./Button";
+import Button from "../Button/Button";
 
 function Header() {
         const activeClass = ({ isActive }) =>

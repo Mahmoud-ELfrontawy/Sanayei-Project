@@ -1,5 +1,5 @@
 // Footer.jsx
-import img from "../sanayei-img/logo project.png";
+import img from "../../sanayei-img/logo project.png";
 import { Link } from "react-router-dom";
 import { FiPhone, FiFacebook, FiMail, FiChevronUp } from "react-icons/fi";
 import "./Footer.css";

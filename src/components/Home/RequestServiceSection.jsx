@@ -1,12 +1,13 @@
 import { FaChevronDown } from "react-icons/fa";
 import "./RequestServiceSection.css";
+import bg from "../../sanayei-img/bggg1.jpg"
 
 export default function RequestServiceSection() {
   return (
     <section className="request-section" aria-labelledby="req-title">
       <div
         className="request-wrap"
-        style={{ "--req-bg": "url(/sanayei-img/bggg.jpg)" }}
+        style={{ backgroundImage: `url(${bg})` }}
       >
         <form className="req-card" onSubmit={(e) => e.preventDefault()}>
           <h3 className="req-card-title">اطلب خدمتك الان</h3>

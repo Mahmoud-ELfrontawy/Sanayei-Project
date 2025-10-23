@@ -1,5 +1,5 @@
 // Login.jsx
-import AuthForm from "../components/AuthForm";
+import AuthForm from "./AuthForm";
 
 export default function Login() {
     const submitLogin = (values) => {

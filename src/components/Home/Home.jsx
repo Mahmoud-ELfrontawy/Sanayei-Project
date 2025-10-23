@@ -1,7 +1,7 @@
-import Button from "./Button";
-import CardsRow from "../pages/CardsRow";
-import "./Header";
-import imageHome from "../sanayei-img/home.jpg";
+import Button from "../Button/Button";
+import CardsRow from "../../pages/CardsRow";
+import "../Home/Header";
+import imageHome from "../../sanayei-img/home.jpg";
 import "./Home.css";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
