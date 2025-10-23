@@ -1,0 +1,221 @@
+:root {
+  --main-color: #ff8031;
+  --main-color2: #f36914;
+  --dark: #000000;
+  --light-bg: #f9fafb;
+  --muted: #777777;
+  --green: #2a3517;
+  --green-2: #556b2f;
+  --radius: 14px;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ==== MAIN SECTION WRAPPER ==== */
+.workers-section {
+  width: 100%;
+  padding: 64px 16px 40px;
+  background-color: var(--light-bg);
+}
+
+/* ==== CONTAINER ==== */
+.workers-container {
+  width: min(1200px, 96%);
+  margin: 0 auto;
+  text-align: center;
+  direction: rtl;
+}
+
+/* ==== TITLES ==== */
+.workers-eyebrow {
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0 0 8px;
+  letter-spacing: 0.4px;
+}
+
+.workers-title {
+  margin: 0 0 36px;
+  font-size: 50px;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+/* ==== GRID LAYOUT ==== */
+.workers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 30px;
+}
+
+/* ==== WORKER CARD ==== */
+.worker-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.worker-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== IMAGE ==== */
+.worker-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worker-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ==== CARD CONTENT ==== */
+.worker-body {
+  padding: 20px;
+  text-align: right;
+}
+
+/* ==== CATEGORY TAG ==== */
+.worker-tag {
+  display: inline-block;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+  padding: 0px 30px;
+  margin-bottom: 10px;
+}
+
+/* ==== WORKER NAME ==== */
+.worker-name {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0 0 8px;
+}
+
+/* ==== WORKER BIO ==== */
+.worker-bio {
+  font-size: 23px;
+  color: var(--muted);
+  line-height: 1.7;
+  min-height: 48px;
+  margin: 0 0 14px;
+}
+
+/* ==== RATING & REVIEWS ==== */
+.worker-meta {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.worker-stars {
+  list-style: none;
+  display: inline-flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.worker-stars li {
+  color: #e5e7eb;
+  font-size: 16px;
+}
+
+.worker-stars li.on {
+  color: var(--main-color);
+}
+
+.worker-reviews {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ==== SERVICE BUTTON (CTA) ==== */
+.worker-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 44px;
+  border-radius: 10px;
+  color: var(--green-2);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 25px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.service-arrow-choose{
+  color: var(--green-2);
+}
+
+.worker-cta:hover {
+  color: var(--green);
+}
+
+.worker-cta:active {
+  transform: translateY(1px);
+}
+
+/* ==== FOOTER BUTTON ==== */
+.workers-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ==== BUTTON SAME AS SERVICES ==== */
+.btn-primary-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 22px;
+  width: 250px;
+  height: 60px;
+  background: var(--main-color);
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-service:hover {
+  background: var(--main-color2);
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
+@media (max-width: 640px) {
+  .workers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .worker-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 16px;
+  }
+
+  .worker-media img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .worker-body {
+    padding: 0;
+  }
+}

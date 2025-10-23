@@ -22,7 +22,7 @@ function Header() {
                 </Link>
 
                 {/* Nav links */}
-                <ul className="hidden md:flex items-center gap-6">
+                <ul className="hidden md:flex items-center gap-8">
                     <li>
                         <NavLink to="/" className={activeClass} end>
                             الرئيسية

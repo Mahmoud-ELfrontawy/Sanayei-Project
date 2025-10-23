@@ -1,0 +1,185 @@
+:root {
+  /* ==== COLOR PALETTE & DESIGN TOKENS ==== */
+  --main: #ff8031;
+  --main-2: #f36914;
+  --green: #2a3517;
+  --muted: #9aa3af;
+  --text: #ffffff;
+  --dark: #111827;
+  --radius: 14px;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+/* ==== MAIN SECTION CONTAINER ==== */
+.request-section {
+  padding: 0;
+  background: #f3f4f6;
+}
+
+/* ==== FULL-WIDTH WRAPPER WITH BACKGROUND IMAGE ==== */
+.request-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 36px;
+  align-items: center;
+  padding: 70px 60px;
+  background-image: url("../sanayei-img/bggg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 0;
+  isolation: isolate;
+}
+
+/* ==== DARK OVERLAY LAYER ON BACKGROUND ==== */
+.request-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 33, 12, 0.78);
+  z-index: -1;
+}
+
+/* ==== REQUEST FORM CARD ==== */
+.req-card {
+  order: 1;
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-radius: 14px;
+  padding: 44px 50px;
+  max-width: 720px;
+  width: 100%;
+  margin-inline-end: 20px;
+}
+
+/* ==== FORM TITLE ==== */
+.req-card-title {
+  text-align: center;
+  color: var(--main);
+  font-weight: 800;
+  margin-bottom: 22px;
+  font-size: 28px;
+}
+
+/* ==== INPUT FIELDS & SELECT ELEMENTS ==== */
+.req-input,
+.req-select select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #fff;
+  color: #111;
+  font-size: 20px;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.req-input::placeholder {
+  color: #b6b6b6;
+}
+
+/* ==== GRID ROW FOR MULTIPLE INPUTS ==== */
+.req-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ==== CUSTOM SELECT CONTAINER ==== */
+.req-select {
+  position: relative;
+}
+
+.req-select select {
+  appearance: none;
+  padding-inline-start: 36px;
+  padding-inline-end: 12px;
+  background-color: #fff;
+}
+
+/* ==== DROPDOWN ICON INSIDE SELECT ==== */
+.req-select svg {
+  position: absolute;
+  inset-inline-start: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #9aa3af;
+  font-size: 12px;
+}
+
+/* ==== SUBMIT BUTTON ==== */
+.req-submit {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 16px;
+  background: var(--main);
+  color: #fff;
+  font-weight: 800;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.req-submit:hover {
+  background: var(--main-2);
+}
+
+/* ==== SIDE CONTENT (TEXT & TITLE) ==== */
+.req-side {
+  color: var(--text);
+  text-align: center;
+  padding-inline-end: 20px;
+}
+
+.req-title {
+  color: var(--main);
+  margin-bottom: 16px;
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.req-text {
+  color: #f0f0f0;
+  line-height: 2;
+  font-size: 32px;
+}
+
+/* ==== ACCESSIBILITY: SCREEN READER ONLY ==== */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==== RESPONSIVE LAYOUT ==== */
+@media (max-width: 980px) {
+  .request-wrap {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .req-side {
+    order: -1;
+    text-align: center;
+    padding: 0 8px 18px;
+  }
+
+  .req-card {
+    margin-inline: auto;
+  }
+}

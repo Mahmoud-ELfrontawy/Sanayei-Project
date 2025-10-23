@@ -2,6 +2,7 @@
 :root {
     --main-color: #ff8031;
     --main-color2: #f36914;
+    --dark-color: #000000;
     --text: #0f172a;
     --muted: #6b7280;
     --bg: #ffffff;
@@ -121,8 +122,8 @@
 
 .about-title {
     margin: 0 0 12px 0;
-    font-size: 28px;
-    color: var(--text);
+    font-size: 32px;
+    color: var(--dark-color);
     line-height: 1.05;
 }
 

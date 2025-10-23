@@ -5,6 +5,8 @@ import imageHome from "../sanayei-img/home.jpg";
 import "./Home.css";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
+import ChooseSanay from "./ChooseSanay";
+import RequestServiceSection from "./RequestServiceSection";
 import Footer from "./Footer";
 
 function Home() {
@@ -16,15 +18,19 @@ function Home() {
                 <div className="image-home__content">
                     <h1>اطلب صنايعك... وخلي الشغل علينا!</h1>
                     <p>مع صنايعي هتلاقي كل خدمات الصيانة والدِيكور في مكان واحد -</p>
-                    <p className="text-white"> صنايعية خبرة، أسعار واضحة، وشغل مضمون يوصل لحد بابك.</p>
-                    <Button/>
+                    <p className="text-white">
+                        {" "}
+                        صنايعية خبرة، أسعار واضحة، وشغل مضمون يوصل لحد بابك.
+                    </p>
+                    <Button />
                 </div>
             </div>
-            <CardsRow/>
-            <AboutSection/>
-            <ServicesSection/>
-            <Footer/>
-            
+            <CardsRow />
+            <AboutSection />
+            <ServicesSection />
+            <ChooseSanay />
+            <RequestServiceSection />
+            <Footer />
         </section>
     );
 }

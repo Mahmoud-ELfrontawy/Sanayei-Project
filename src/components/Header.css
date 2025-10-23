@@ -27,7 +27,7 @@ header nav .logo img {
 }
 
 header ul li a {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     transition: var(--transition);
 }
@@ -38,12 +38,13 @@ header ul li a:hover li svg {
 }
 
 header nav .logo .logo-text .sanay-text {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 header nav .buttons-header a,
 header nav .buttons-header .btn-primary,
 header nav .buttons-header .btn-outline {
+    font-size: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
