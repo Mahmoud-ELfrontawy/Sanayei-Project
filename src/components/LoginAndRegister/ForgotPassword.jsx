@@ -1,12 +1,12 @@
 // ForgotPassword.jsx
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./RegisterAndLogin.css";
 import image from "../../sanayei-img/image-register.png";
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState("");
-    const [status, setStatus] = useState("idle"); 
+    const [status, setStatus] = useState("idle");
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
@@ -62,7 +62,9 @@ export default function ForgotPassword() {
                         </button>
 
                         <div className="link-forgot-password mt-4">
-                            <a href="/login" className="link">الرجوع لتسجيل الدخول</a>
+                            <Link to="/login" className="link">
+                                الرجوع لتسجيل الدخول
+                            </Link>
                         </div>
                     </form>
                 </section>
