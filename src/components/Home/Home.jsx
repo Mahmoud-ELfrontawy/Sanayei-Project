@@ -8,6 +8,7 @@ import ServicesSection from "./ServicesSection";
 import ChooseSanay from "./ChooseSanay";
 import RequestServiceSection from "./RequestServiceSection";
 import Footer from "./Footer";
+import WorkerProfile from "./WorkerProfile";
 
 function Home() {
     return (
@@ -31,6 +32,7 @@ function Home() {
             <ChooseSanay />
             <RequestServiceSection />
             <Footer />
+            <WorkerProfile />
         </section>
     );
 }

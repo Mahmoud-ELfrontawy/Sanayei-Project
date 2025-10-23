@@ -15,7 +15,7 @@ const workers = [
     rating: 4,
     reviews: 77,
     image: Image1,
-    to: "/workers/paint/kareem-mostafa",
+    to: "/workers/painting/kareem-mostafa",
   },
   {
     id: "electric",
@@ -39,7 +39,7 @@ const workers = [
   },
 ];
 
-export default function WorkersSection() {
+export default function ChooseSanay() {
   return (
     <section className="workers-section" aria-labelledby="workers-title">
       <div className="workers-container">

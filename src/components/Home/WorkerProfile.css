@@ -1,0 +1,403 @@
+
+:root {
+  --main-color: #ff8031;
+  --main-color2: #f36914;
+  --green: #2a3517;
+  --green-2: #556b2f;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   General Reset & Layout
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+.profile-page {
+  background: #f5f6f7;
+  padding: 28px 0 48px;
+}
+
+.profile-container {
+  width: min(1180px, 96%);
+  margin: 0 auto;
+}
+
+/* =========================
+   Hero Section (Top Banner)
+========================= */
+.profile-hero {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  border: 1px solid #e7e7e7;
+  background: #111;
+}
+.profile-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.30;
+  filter: grayscale(50%);
+    object-position:0% 75% ;
+
+}
+.profile-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+/* =========================
+   Main Page Layout (Grid)
+========================= */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px; 
+  gap: 28px;
+}
+
+/* =========================
+   Tabs Navigation
+========================= */
+.tabs {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+  padding-inline: 6px;
+}
+.tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 28px;
+  padding: 18px 0;
+  color: #1f2937;
+  position: relative;
+}
+.tab.active {
+  color: var(--main-color2);
+}
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--main-color2);
+  border-radius: 3px;
+}
+
+.tab-panel {
+  padding: 22px 6px 8px;
+}
+
+/* =========================
+   About Section
+========================= */
+.about-grid {
+  display: grid;
+  gap: 16px;
+}
+.about-item {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.about-item h4 {
+  margin: 0 0 10px;
+  font-size: 23px;
+  color: #1f2937;
+  font-weight: 800;
+}
+.about-item p {
+  margin: 0;
+  line-height: 2;
+  color: #4b5563;
+  font-size: 23px;
+}
+
+/* =========================
+   Services Section
+========================= */
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.services-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  font-size: 20px;
+  color: #2d3b23;
+}
+.services-list .chk {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 128, 49, 0.1);
+  color: var(--main-color2);
+  border: 1px solid rgba(255, 128, 49, 0.25);
+}
+
+/* =========================
+   Reviews Section
+========================= */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.review-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  text-align: right;
+}
+.review-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.review-head img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e6e9ed;
+}
+.review-head h5 {
+  margin: 0;
+  font-size: 22px;
+  color: #111827;
+}
+.stars {
+  display: flex;
+  gap: 4px;
+}
+.stars .on {
+  color: #ff8031;
+}
+.stars .off {
+  color: #e5e7eb;
+}
+.review-text {
+  color: #4b5563;
+  line-height: 2;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* =========================
+   Portfolio Section
+========================= */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-cta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+.btn.btn-primary-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 22px;
+  width: 250px;
+  height: 60px;
+  background: var(--main-color);
+  color: #fff;
+}
+.btn.btn-primary-service:hover {
+  background: var(--main-color2);
+}
+
+/* =========================
+   Worker Profile Sidebar
+========================= */
+.profile-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 28px;
+  padding: 22px 25px 30px;
+  height: max-content;
+  position: relative;
+}
+.avatar-ring {
+  display: grid;
+  place-items: center;
+  margin-top: -70px;
+}
+.avatar-wrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 5px solid #d2e1c9;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.03) inset;
+}
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.worker-name {
+  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 35px;
+  color: #111;
+  font-weight: 800;
+}
+.worker-title {
+  text-align: center;
+  color: #7a7f86;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+.worker-stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 23px;
+}
+.worker-stars .on {
+  color: #ff8031;
+}
+.worker-stars .off {
+  color: #e5e7eb;
+}
+.worker-years {
+  text-align: center;
+  color: #2b2f33;
+  font-weight: 800;
+  margin-bottom: 16px;
+  font-size: 23px;
+}
+
+/* =========================
+   Generic Button Styles
+========================= */
+.btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn.solid {
+  background: var(--green-2);
+  color: #fff;
+  border: 1px solid var(--green-2);
+}
+.btn.solid:hover {
+  background: var(--green);
+}
+.btn.ghost {
+  background: #fff;
+  color: #495057;
+  border: 2px solid #e5e7eb;
+  margin-top: 10px;
+}
+.btn.ghost:hover {
+  border-color: #d1d5db;
+}
+
+/* =========================
+   Responsive Breakpoints
+========================= */
+
+/* Medium screens: reduce grids */
+@media (max-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Small screens: single column layout */
+@media (max-width: 860px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile-card {
+    order: -1;
+    margin-top: 64px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 520px) {
+  .tab {
+    font-size: 16px;
+  }
+  .worker-name {
+    font-size: 24px;
+  }
+  .worker-years {
+    font-size: 14px;
+  }
+  .profile-hero {
+    height: 170px;
+  }
+}
+
+/* Large screens: move sidebar to the right */
+@media (min-width: 861px) {
+  .profile-layout {
+    grid-template-columns: 360px 1fr;
+  }
+  .profile-card {
+    order: -1;
+  }
+}
