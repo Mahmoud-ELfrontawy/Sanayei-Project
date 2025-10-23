@@ -104,7 +104,6 @@ export default function WorkersSection() {
           ))}
         </div>
 
-        {/* الزر هنا أصبح مطابق لزر الخدمات */}
         <div className="workers-footer">
           <Link to="/workers" className="btn btn-primary-service">
             عرض كل الصنايعية
