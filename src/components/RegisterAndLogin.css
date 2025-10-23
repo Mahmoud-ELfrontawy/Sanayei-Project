@@ -11,9 +11,16 @@
     --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-.register{
-    padding-top: 20px;
+.text-muted {
+    color: var(--muted-color);
+    font-size: 20px;
+    margin-top: 6px;
 }
+
+.register {
+    padding-top: 10px;
+}
+
 /* card container */
 .register-card {
     border-radius: var(--radius);
@@ -22,14 +29,13 @@
     box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
-    direction :ltr;
+    direction: ltr;
 }
 
-/* تحسين الشكل على الشاشات الكبيرة */
+
 @media (min-width: 768px) {
     .register-card {
         height: 630px;
-        /* أكبر شوية */
         flex-direction: row;
     }
 }
@@ -51,7 +57,7 @@
     font-weight: 700;
 }
 
-.form-side p {
+.form-side .btn-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +108,6 @@ form {
 .pass-toggle {
     position: absolute;
     left: 12px;
-    /* dir=rtl */
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
@@ -113,7 +118,22 @@ form {
     padding: 6px;
 }
 
-/* primary button (أكبر وأوضح) */
+.remeber-me{
+    direction: ltr;
+}
+.remeber-me label{
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    font-size: 20px;
+    color: var(--par-color);
+    direction: rtl;
+}
+.remeber-me input{
+    width: 18px;
+    height: 18px;
+}
+
 .btn-primary-register {
     display: inline-flex;
     align-items: center;
@@ -125,7 +145,7 @@ form {
     border-radius: 10px;
     border: none;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 23px;
     cursor: pointer;
     transition: transform .12s ease, box-shadow .12s ease;
     width: 100%;
@@ -152,18 +172,18 @@ form {
     flex: 1 1 0;
 }
 
-.divider span{
-    font-size: 20px;
+.divider span {
+    font-size: 25px;
 }
 
 /* socials */
-.socials-register {
+.socials-register-and-login {
     display: flex;
     gap: 12px;
     margin-top: 6px;
 }
 
-.socials-register button {
+.socials-register-and-login button {
     flex: 1 1 0;
     display: inline-flex;
     align-items: center;
@@ -178,21 +198,23 @@ form {
     font-size: 20px;
     cursor: pointer;
     transition: transform .12s ease, background .12s ease;
+    direction: ltr;
 }
 
-.socials-register button:hover {
+.socials-register-and-login button:hover {
     background: rgba(85, 107, 47, 0.555);
     color: white;
 }
 
 /* small text and link */
-.text-muted-register {
+.text-muted-register-and-login {
     color: var(--muted-color);
     font-size: 20px;
-    margin-top: 6px;
+    margin-top: 20px;
 }
 
 .link {
+    font-size: 20px;
     color: var(--main-color);
     text-decoration: none;
     font-weight: 700;

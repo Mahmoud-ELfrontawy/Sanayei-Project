@@ -5,6 +5,7 @@ import RequestServiceSection from "./components/RequestServiceSection";
 import ChooseSanay from "./components/ChooseSanay";
 import Orders from "./pages/Orders";
 import Register from "./components/Register"
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/choose" element={<ChooseSanay />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       
     </>
