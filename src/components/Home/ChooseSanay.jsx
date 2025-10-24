@@ -1,43 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
-import Image1 from "../../sanayei-img/image3.png";
-import Image2 from "../../sanayei-img/image4.png";
-import Image3 from "../../sanayei-img/image5.png";
-
+import { workers } from "../../data/Workers"; // ← استخدم الداتا الموحّدة
 import "./ChooseSanay.css";
-
-const workers = [
-  {
-    id: "mechanic",
-    tag: "دهان",
-    name: "كريم مصطفى",
-    bio: "تشطيبات الدهانات الداخلية والخارجية. خبرة أكثر من 6 سنوات.",
-    rating: 4,
-    reviews: 77,
-    image: Image1,
-    to: "/workers/painting/kareem-mostafa",
-  },
-  {
-    id: "electric",
-    tag: "كهربائي",
-    name: "سامي حسين",
-    bio: "كهربائي معتمد لحلول الإضاءة والتمديدات الكهربائية؛ ضمان ومتابعة بشرِكة 7 سنوات.",
-    rating: 5,
-    reviews: 120,
-    image: Image2,
-    to: "/workers/electric/sami-hussein",
-  },
-  {
-    id: "carpenter",
-    tag: "نجار",
-    name: "محمد أحمد الصاوي",
-    bio: "خبير في حلول السباكة والتسريبات السريعة. خبرة أكثر من 8 سنوات.",
-    rating: 4,
-    reviews: 92,
-    image: Image3,
-    to: "/workers/carpenter/mohamed-elsawy",
-  },
-];
 
 export default function ChooseSanay() {
   return (
@@ -89,8 +53,10 @@ export default function ChooseSanay() {
                   </span>
                 </div>
 
+                {/* ✅ عند الضغط هنا، بنروح صفحة العامل ومعانا كل بياناته */}
                 <Link
-                  to={w.to}
+                  to={`/worker/${w.id}`}
+                  state={w}
                   className="worker-cta"
                   aria-label={`طلب خدمة من ${w.name}`}
                 >
@@ -105,7 +71,8 @@ export default function ChooseSanay() {
         </div>
 
         <div className="workers-footer">
-          <Link to="/workers" className="btn btn-primary-service">
+          {/* ✅ لو عايزها ترجع لنفس الصفحة استعمل /choose */}
+          <Link to="/choose" className="btn btn-primary-service">
             عرض كل الصنايعية
           </Link>
         </div>
