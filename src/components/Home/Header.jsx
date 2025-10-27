@@ -31,7 +31,7 @@ function Header() {
 
                     <li>
                         <NavLink
-                            to="/request-service"
+                            to="/services"
                             className={({ isActive }) =>
                                 `flex items-center gap-1 ${isActive ?
                                     "text-[#FF8031] font-semibold" : ""}`

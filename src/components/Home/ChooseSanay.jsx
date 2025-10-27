@@ -30,7 +30,7 @@ export default function ChooseSanay() {
                   {w.tag}
                 </span>
 
-                <h3 className="worker-name">{w.name}</h3>
+                <h3 className="worker-name-sanay">{w.name}</h3>
 
                 <p className="worker-bio">{w.bio}</p>
 

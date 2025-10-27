@@ -109,9 +109,10 @@
 
 /* ===== Service Link ===== */
 .service-link {
+    width: 100%;
     color: var(--main-color);
     font-weight: 600;
-    font-size: 20px;
+    font-size: 23px;
     text-decoration: none;
     display: flex;
     justify-content: space-between;

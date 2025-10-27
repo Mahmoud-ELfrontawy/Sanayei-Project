@@ -10,6 +10,7 @@ import ForgotPassword from "./components/LoginAndRegister/ForgotPassword";
 import ChangePassword from "./components/LoginAndRegister/ChangePassword";
 
 import WorkerProfile from "./components/Home/WorkerProfile";
+import Services from "./components/Features/Services/Services";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
         <Route path="/worker/:id" element={<WorkerProfile />} />
         <Route path="/choose" element={<ChooseSanay />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </>
   );

@@ -88,13 +88,13 @@
   background: var(--main-color);
   color: #fff;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 25px;
   padding: 0px 30px;
   margin-bottom: 10px;
 }
 
 /* ==== WORKER NAME ==== */
-.worker-name {
+.worker-name-sanay {
   font-size: 30px;
   font-weight: 800;
   color: var(--dark);
@@ -149,7 +149,7 @@
   gap: 8px;
   height: 44px;
   border-radius: 10px;
-  color: var(--green-2);
+  color: var(--main-color);
   text-decoration: none;
   font-weight: 700;
   font-size: 25px;
@@ -157,11 +157,11 @@
 }
 
 .service-arrow-choose{
-  color: var(--green-2);
+  color: var(--main-color);
 }
 
 .worker-cta:hover {
-  color: var(--green);
+  color: var(--green-2);
 }
 
 .worker-cta:active {
